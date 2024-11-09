@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Med-Ease</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+</head>
+    <style>
+        #app {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-form label, .login-form input {
+            margin-bottom: 10px;
+        }
+
+        .upload-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .upload-form input {
+            margin-bottom: 10px;
+        }
+
+    </style>
+<body>
+    <section class="headermin">
+    <nav>
+        <a href="index2.html"><img src="images/logo.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index2.html">HOME</a></li>
+                    <li><a href="Booking.html">BOOKINGS</a></li>
+                    <li><a href="medrec.html">MEDICAL RECORDS</a></li>
+                    <li><a href="pharmaLocator.html">PHARMALOCATOR</a></li>
+                    <li><a href="index.html">LOG OUT</a></li>
+                </ul>
+            </div>
+
+        </nav>
+
+<div class="text-box">
+    <h1 style="color: white">Med-Ease</h1>
+</div>
+</section>
+        <h1>Patient Dashboard</h1>
+<div id="app">
+        <div v-if="!loggedIn" class="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" v-model="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" v-model="password" required>
+
+            <button @click="login">Login</button>
+        </div>
+
+        <div v-if="loggedIn">
+
+            <div v-if="username">
+                <h2>Your Records:</h2>
+                <ul>
+                    <li v-for="record in medicalRecords[username]" @click="viewRecord(record)">{{ record }}</li>
+                </ul>
+            </div>
+
+            <div v-if="username">
+                <h2>Upload Your Records:</h2>
+                <form class="upload-form" action="/action_page.php">
+                    <input type="file" id="myFile" name="filename">
+                    <input type="submit" value="Upload">
+                </form>
+                <hr>
+                    <h3 style="text-align: center">Chat Box</h3>
+                    <a href="framead.html" class="log-in" style="margin-left: 40%"><img src="images/chat.jpg" style="height: 50px; width: 50px"></a>
+                    <br>
+                    <h3 style="text-align: center">Video Call</h3>
+                    <a href="meet.html" class="log-in" style="margin-left: 40%"><img src="zoom.jpg" style="height: 50px; width: 50px"></a>
+                    <br>
+                    <br>
+            </div>
+
+            <button @click="logout">Logout</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                username: '',
+                password: '',
+                loggedIn: false,
+                medicalRecords: {
+                    'patient1': ['Record A', 'Record B'],
+                    'patient2': ['Record X', 'Record Y'],
+                    
+                },
+            },
+            methods: {
+                login() {
+                    // In a real-world scenario, you would perform authentication here
+                    // For simplicity, let's assume the entered username is a valid patient
+                    if (Object.keys(this.medicalRecords).includes(this.username)) {
+                        this.loggedIn = true;
+                    } else {
+                        alert('Invalid username. Please try again.');
+                    }
+                },
+                viewRecord(record){
+                    window.location.href="patdiag.html?record=" + record;
+                },
+                logout() {
+                    this.username = '';
+                    this.password = '';
+                    this.loggedIn = false;
+                },
+            },
+        });
+    </script>
+<section class="footer">
+    <p><a href="terms.html">Terms & conditions &copy;</a></p>
+</section>
+    
+</body>
+</html>

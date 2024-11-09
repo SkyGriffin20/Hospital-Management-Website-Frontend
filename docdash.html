@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Med-Ease</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+</head>
+    <style>
+
+        #app {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-form label, .login-form input {
+            margin-bottom: 10px;
+        }
+    </style>
+<body>
+    <section class="headermin">
+    <nav>
+        <a href="index2.html"><img src="images/logo.png"</a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index2.html">HOME</a></li>
+                    <li><a href="Booking.html">BOOKINGS</a></li>
+                    <li><a href="medrec.html">MEDICAL RECORDS</a></li>
+                    <li><a href="pharmaLocator.html">PHARMALOCATOR</a></li>
+                    <li><a href="index.html">LOG OUT</a></li>
+                </ul>
+            </div>
+
+        </nav>
+
+<div class="text-box">
+    <h1 style="color: white">Med-Ease</h1>
+</div>
+</section>
+        <h1>Doctor Dashboard</h1>
+<div id="app">
+        <div v-if="!loggedIn" class="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" v-model="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" v-model="password" required>
+
+            <button @click="login">Login</button>
+        </div>
+
+        <div v-if="loggedIn">
+            <h1>Doctor Dashboard</h1>
+
+            <ul>
+                <li v-for="patient in patients[username]">
+                    <a @click="viewMedicalRecords(patient)">{{ patient }}</a>
+                </li>
+            </ul>
+            <hr>
+            <h3 style="text-align: center"><a href="daignosis.html">Upload Diagnosis</a></h3>
+                <h3 style="text-align: center">Chat Box</h3>
+                <a href="docchat.html" class="log-in" style="margin-left: 40%"><img src="images/chat.jpg" style="height: 50px; width: 50px"></a>
+            <br>
+            <br>
+            <button @click="logout">Logout</button>
+        </div>
+
+        <div v-if="selectedPatient">
+            <h2>Medical Records for {{ selectedPatient }}</h2>
+            <ul>
+                <li v-for="record in medicalRecords[selectedPatient]">{{ record }}</li>
+            </ul>
+            <button @click="backToDashboard">Back to Dashboard</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                username: '',
+                password: '',
+                loggedIn: false,
+                patients: {
+                    'doctor1': ['patient1', 'patient2'],
+                    'doctor2': ['patient3', 'patient4'],
+                },
+                selectedPatient: null,
+                medicalRecords: {
+                    'patient1': ['Record A', 'Record B'],
+                    'patient2': ['Record X', 'Record Y'],
+                    'patient3': ['Record P', 'Record Q'],
+                    'patient4': ['Record M', 'Record N'],
+                },
+            },
+            methods: {
+                login() {
+                    // In a real-world scenario, you would perform authentication here
+                    // For simplicity, let's assume the entered username is a valid doctor
+                    if (Object.keys(this.patients).includes(this.username)) {
+                        this.loggedIn = true;
+                    } else {
+                        alert('Invalid username. Please try again.');
+                    }
+                },
+                viewMedicalRecords(patient) {
+                    this.selectedPatient = patient;
+                },
+                backToDashboard() {
+                    this.selectedPatient = null;
+                },
+                logout() {
+                    this.username = '';
+                    this.password = '';
+                    this.loggedIn = false;
+                    this.selectedPatient = null;
+                },
+            },
+        });
+    </script>
+<section class="footer">
+    <p><a href="terms.html">Terms & conditions &copy;</a></p>
+</section>
+</body>
+</html>

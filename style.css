@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: bisque;
+}
+.header{
+    min-height: 90vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.headermin{
+    min-height: 45vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 62px;
+}
+.log-in1{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.log-in1:hover{
+    border: 1px solid #f44336;
+    background-color: lawngreen;
+    transition: 1s;
+}
+.log-in{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.log-in:hover{
+    border: 1px solid #f44336;
+    background-color: lawngreen;
+    transition: 1s;
+}
+nav .fa{
+    display: none;
+}
+
+/*------ Medical Records ------*/
+.med-rec{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+} 
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.med-col{
+    flex-basis: 30%;
+    background: #fff3f3;
+    border-radius: 10px; 
+    margin-bottom: 5%;
+    padding: 20px 5pc;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.med-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+/*--------- Appointment Booking ---------*/
+
+.booking{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.book-col{
+    flex-basis: 30%;
+    border-radius: 2px;
+    margin-bottom: 2%;
+    padding: 5px 2pc;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+.book-col:hover{
+    box-shadow: 0 0 15px 0px rgba(0,0,0,0.2);
+}
+
+/*--------- Feedback ---------*/
+ 
+.feedback{
+    width: 90%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+.feed-col{
+    flex-basis: 30%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+}
+.feed-col p{
+    padding: 0;
+}
+.feed-col h4{
+    margin-top: auto;
+    text-align: center;
+}
+.log-box h1{
+    color: #fff;
+}
+
+.ab{
+    text-align: center;
+    margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.ab p{
+    font-size: 20px;
+}
+.book{
+    margin: auto;
+    text-align: center;
+    flex-basis: 30%;
+    border-radius: 2px;
+    margin-bottom: 2%;
+    padding: 5px 2pc;
+    box-sizing: border-box;
+}
+.doctor{
+    display: flex;
+    justify-content: space-between;
+}
+.doc-col{
+    flex-basis: 40%;
+    background: #fff3f3;
+    border-radius: 10px; 
+    margin-bottom: 5%;
+    padding: 20px 5pc;
+    box-sizing: border-box;
+}
+.med-col1{
+    flex-basis: 50%;
+    background: #fff3f3;
+    border-radius: 5px; 
+    margin-bottom: 5%;
+    padding: 30px 15pc;
+    box-sizing: border-box;
+}
+
+/*----------- footer -----------*/
+
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer p{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.terms{
+    text-align: left;
+    margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.tab p{
+    font-size: 17px;
+}
+.table{
+    align-self: center;
+}
+
+hr.line{
+    border: 1px dashed black;
+    width: 96%;
+    margin: 2%;
+}

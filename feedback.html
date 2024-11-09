@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking System</title>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Med-Ease</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+</head>
+<body>
+    <section class="headermin">
+    <nav>
+        <a href="index2.html"><img src="images/logo.png"</a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index2.html">HOME</a></li>
+                    <li><a href="Booking.html">BOOKINGS</a></li>
+                    <li><a href="medrec.html">MEDICAL RECORDS</a></li>
+                    <li><a href="pharmaLocator.html">PHARMALOCATOR</a></li>
+                    <li><a href="index.html">LOG OUT</a></li>
+                </ul>
+            </div>
+
+        </nav>
+
+<div class="text-box">
+    <h1>Med-Ease</h1>
+</div>
+</section>
+<section class="book"> 
+    <div class="bk-brain"> 
+    <h1>Feedback Form</h1>
+    <br>
+    <br>
+    <form id="feedbackForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br>
+        <br>
+        <label for="doctor">Doctor:</label>
+        <input type="text" id="doctor" required>
+        <br><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" required><br>
+        <br>
+        <label for="time">Time:</label>
+        <input type="time" id="time" required><br>
+        <br>
+        Feedback:<br><textarea colspan="5" rowspan="2" ></textarea><br><br>
+        <a href="feedbackcon.html" class="log-in">Submit Feedback</a>
+        <br><br>
+    </form>
+        </div>
+        </section>
+    <div id="message"></div>
+
+    <script>
+        function bookAppointment() {
+            const name = document.getElementById('name').value;
+            const doctor = document.getElementById('doctor').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+
+            const data = {
+                name: name,
+                doctor: doctor,
+                date: date,
+                time: time
+            };
+
+            fetch('/book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                document.getElementById('message').innerText = result.message;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+<section class="footer">
+    <p><a href="terms.html">Terms & conditions &copy;</a></p>
+</section>
+</body>
+</html>

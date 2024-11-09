@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Prescription</title>
+        <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+
+<section class="headermin">
+    <nav>
+        <a href="index2.html"><img src="images/logo.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index2.html">HOME</a></li>
+                    <li><a href="Booking.html">BOOKINGS</a></li>
+                    <li><a href="medrec.html">MEDICAL RECORDS</a></li>
+                    <li><a href="pharmaLocator.html">PHARMALOCATOR</a></li>
+                    <li><a href="index.html">LOG OUT</a></li>
+                </ul>
+            </div>
+
+        </nav>
+
+<div class="text-box">
+    <h1>Med-Ease</h1>
+</div>
+</section>
+    <style>
+        
+        .container {
+            text-align: center;
+            max-width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div class="container">
+        <h1>E-Prescription</h1>
+            <table id="prescriptionTable" border="1" style="border-collapse: collapse; width: 100%;" align="center" >
+                <tr>
+                    <th>Medication</th>
+                    <th>Time</th>
+                    <th>Dose</th>
+                    <th>Days</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="medication[]" required></td>
+                    <td>
+                        <input type="checkbox" name="time1" value="morning" id="morning">
+                        <label for="morning">Morning</label><br>
+                        <input type="checkbox" name="time2" value="afternoon" id="afternoon">
+                        <label for="afternoon">Afternoon</label><br>
+                        <input type="checkbox" name="time3" value="evening" id="evening">
+                        <label for="evening">Evening</label>
+                    </td>
+                    <td><input type="number" name="dose[]" required></td>
+                    <td><input type="number" name="days[]" required></td>
+                </tr>
+            </table>
+            <br>
+            <button onclick="addRow()">Add Row</button>
+            <br>
+            <br>
+            <a href="docpresccon.html" class="log-in">Submit Prescription</a>
+    </div>
+    <script>
+        function addRow() {
+            var table = document.getElementById("prescriptionTable");
+            var newRow = table.insertRow(table.rows.length);
+            var cells = [];
+            for (var i = 0; i < 4; i++) {
+                cells.push(newRow.insertCell(i));
+            }
+            cells[0].innerHTML = '<input type="text" name="medication[]" required>';
+            cells[1].innerHTML = '<input type="checkbox" name="time1" value="morning" id="morning"><label for="morning">Morning</label><br><input type="checkbox" name="time2" value="afternoon" id="afternoon"><label for="afternoon">Afternoon</label><br><input type="checkbox" name="time3" value="evening" id="evening"><label for="evening">Evening</label>';
+            cells[2].innerHTML = '<input type="number" name="dose[]" required>';
+            cells[3].innerHTML = '<input type="number" name="days[]" required>';
+        }
+    </script>
+    <section class="footer">
+    <p><a href="terms.html">Terms & conditions &copy;</a></p>
+</section>
+</body>
+</html>
+

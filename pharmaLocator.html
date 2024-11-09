@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Locator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <section class="headermin">
+        <nav>
+        <a href="index.html"><img src="images/logo.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="login.html">BOOKINGS</a></li>
+                    <li><a href="login.html">MEDICAL RECORDS</a></li>
+                    <li><a href="pharmaLocator.html">PHARMALOCATOR</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="text-box">
+            <h1 style="color: white">Med-Ease</h1>
+        </div>
+    </section>
+    <style>
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            margin: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        select {
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #mapContainer {
+            margin-top: 20px;
+            max-width: 100%;
+            margin: auto;
+            padding: 80px 0;
+        }
+    </style>
+</head>
+<body style="text-align: center">
+    <h1>Pharmacy Locator</h1>
+    <label for="location">Select Location:</label>
+    <select id="locationSelect">
+        <option value="" disabled selected>Select a location</option>
+        <option value="dadar">Dadar</option>
+        <option value="vile parle">Vile Parle</option>
+    </select>
+    <button onclick="loadMap()">Load Map</button>
+    <div id="mapContainer"></div>
+
+    <script>
+        function loadMap() {
+            var location = document.getElementById('locationSelect').value;
+            var mapIframe;
+            if (location === 'dadar') {
+                mapIframe = '<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15087.836621491986!2d72.83266058820591!3d19.02152140269094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1spharmacies%20near%20dadar!5e0!3m2!1sen!2sin!4v1711733681564!5m2!1sen!2sin" width="90%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else if (location === 'vile parle') {
+                mapIframe = '<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d32962.397623123135!2d72.83177017598837!3d19.097182276689768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1spharmacies%20near%20vile%20parle!5e0!3m2!1sen!2sin!4v1711733889062!5m2!1sen!2sin" width="90%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+            } else {
+                alert('Please select a valid location.');
+                return;
+            }
+            document.getElementById('mapContainer').innerHTML = mapIframe;
+        }
+    </script>
+</body>
+</html>

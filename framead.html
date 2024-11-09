@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient-Doctor Chat</title>
+    <!--<link rel="stylesheet" href="t1.css">-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+    <section class="headermin">
+        <nav>
+        <a href="index.html"><img src="images/logo.png"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index2.html">HOME</a></li>
+                    <li><a href="Booking.html">BOOKINGS</a></li>
+                    <li><a href="medrec.html">MEDICAL RECORDS</a></li>
+                    <li><a href="pharmaLocator.html">PHARMALOCATOR</a></li>
+                    <li><a href="index.html">LOG OUT</a></li>
+                </ul>
+            </div>
+        </nav>
+<div class="text-box">
+    <h1>Med-Ease</h1>
+</div>
+</section>  
+    <style>
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .message{
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 10px;
+            max-width: 60%;
+            color: #fff;
+        }
+        .patient-message {
+            background-color: #007bff;
+            color: #fff;
+            align-self: flex-end;
+            text-align: left;
+            max-width: fit-content;
+        }
+        .doctor-message {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .message p{
+            margin: 0;
+            color: #fff;
+        }
+        
+
+
+        .patientq1{
+            background-color: #007bff;
+            color: #fff;
+            align-self: flex-end;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 60%;
+            text-align: right;
+    
+        }
+        .doctorq1{
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            margin: 10px 0;
+            margin-left: 200px;
+            border-radius: 10px;
+            max-width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div class="container">
+        <h1>Doctor1 Chat Box</h1>
+        <div id="chat">
+            <p class="patientq1" style="text-align: right;">Doctor, I've been feeling under the weather lately. 
+               I've got this persistent cold that just won't go away.</p>
+            <p class="doctorq1"> I see. Could you be more specific about these symptoms and how long have you been experiencing these symptoms?</p>
+            <p class="patientq1">I have runny nose and my throat hurts. It has been going for about a week now. </p>
+            <p class="doctorq1">Are you currently on any medication?</p>
+        </div>
+        <form id="message-form">
+            <input type="text" id="input" placeholder="Type your message..." style="margin-left: 190px">
+            <button type="submit">Send</button>
+        </form>
+        <br>
+        <a href="patdash.html" class="log-in" style="margin-left: 240px">Back</a>
+    </div>
+
+    <script>
+        var chat = document.getElementById('chat');
+        var form = document.getElementById('message-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            var message = document.getElementById('input').value.trim();
+            if (message !== '') {
+                sendMessage('patient', message);
+                document.getElementById('input').value = '';
+            }
+        });
+
+        function sendMessage(sender, message) {
+            var messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(sender + '-message');
+            messageDiv.innerHTML = '<p>' + message + '</p>';
+            chat.appendChild(messageDiv);
+            chat.scrollTop = chat.scrollHeight; // Scroll to bottom
+        }
+    </script>
+    <section class="footer">
+    <p><a href="terms.html">Terms & conditions &copy;</a></p>
+</section>
+</body>
+</html>

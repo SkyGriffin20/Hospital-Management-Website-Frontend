@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking System</title>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Pewter Hospital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+</head>
+<body>
+    <section class="headermin">
+    <nav>
+        <a href="index2.html"><img src="images/logo.png"</a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index2.html">HOME</a></li>
+                    <li><a href="Booking.html">BOOKINGS</a></li>
+                    <li><a href="medrec.html">MEDICAL RECORDS</a></li>
+                    <li><a href="pharmaLocator.html">PHARMALOCATOR</a></li>
+                    <li><a href="index.html">LOG OUT</a></li>
+                </ul>
+            </div>
+
+        </nav>
+
+<div class="text-box">
+    <h1>Pewter Hospital</h1>
+</div>
+        </section>   
+<section class="book"> 
+    <div class="bk-brain"> 
+    <h1>Booking System</h1>
+        <h2>Neurology Department</h2>
+    <br>
+<div class="doctor">
+    <div class="doc-col">
+        <h3>Dr. Paul Smith</h3>
+    <p>Timings: Monday to Friday - 9:00 AM to 5:00 PM<br>
+Consultation Fee: $120</p>
+    </div>
+    <div class="doc-col">
+        <h3>Dr. Yash Karande</h3>
+    <p>Timings: Monday to Friday - 2:00 PM to 12:00 PM<br>
+Consultation Fee: $100</p>
+    </div>
+    
+</div>
+    <form id="bookingForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br>
+        <br>
+        <label for="doctor">Doctor:</label>
+        <select id="doctor" required>
+            <option value="DrSmith">Dr. Smith</option>
+            <option value="DrJones">Dr. Karande</option>
+            <!-- Add more doctors as needed -->
+        </select><br>
+        <br><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" required><br>
+        <br>
+        <label for="time">Time:</label>
+        <input type="time" id="time" required><br>
+        <br>
+         Med-Ease
+        <br><br>
+    </form>
+        </div>
+        </section>
+    <div id="message"></div>
+
+<section class="footer">
+    <p><a href="terms.html">Terms & conditions &copy;</a></p>
+</section>
+</body>
+</html>
