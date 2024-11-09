@@ -34,7 +34,7 @@ A front-end hospital management system built with HTML, CSS, and JavaScript. Thi
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/hospital-management-website.git
+   git clone https://github.com/SkyGriffin20/hospital-management-website.git
 
 ## Usage
 
@@ -58,4 +58,5 @@ A front-end hospital management system built with HTML, CSS, and JavaScript. Thi
 - **Responsive Design**: Ensure full compatibility across mobile and tablet devices.
 
 ## Contact
-skygriffin20.contact@gmail.com
+- skygriffin20.contact@gmail.com
+- atharvadhuri06@gmail.com
