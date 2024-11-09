@@ -47,7 +47,7 @@ A front-end hospital management system built with HTML, CSS, and JavaScript. Thi
 ├── index.html          # Main page
 ├── style.css           # CSS for styling
 ├── pharmaLocator.html  # Pharmacy locator page
-└── Code-Files/images  # Images folder
+└── Code Files/images   # Images folder
 ```
 
 ## Future Improvements
