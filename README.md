@@ -49,7 +49,7 @@ A front-end hospital management system built with HTML, CSS, and JavaScript. Thi
 ├── script.js           # Core functionality
 ├── pharmaLocator.html  # Pharmacy locator page
 └── assets/screenshots  # Screenshots folder
-
+```
 
 ## Future Improvements
 
