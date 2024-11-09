@@ -9,6 +9,7 @@ A front-end hospital management system built with HTML, CSS, and JavaScript. Thi
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Future Improvements](#future-improvements)
+- [Contact](#contact)
 
 ## Features
 
@@ -55,3 +56,6 @@ A front-end hospital management system built with HTML, CSS, and JavaScript. Thi
 - **Backend Integration**: Add a server-side component for user authentication and data storage.
 - **Dynamic Maps**: Expand the Pharmacy Locator to support dynamic location searches based on user input.
 - **Responsive Design**: Ensure full compatibility across mobile and tablet devices.
+
+## Contact
+skygriffin20.contact@gmail.com
