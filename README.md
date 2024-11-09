@@ -34,3 +34,18 @@ A front-end hospital management system built with HTML, CSS, and JavaScript. Thi
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/hospital-management-website.git
+
+## Usage
+
+- **Login**: Use hardcoded credentials to log in as a patient or doctor.
+- **Booking and Chat**: Explore booking features and use the chat for patient-doctor interaction.
+- **Pharmacy Locator**: Visit the locator page and choose a location to view nearby pharmacies on Google Maps.
+
+## Project Structure
+
+```plaintext
+├── index.html          # Main page
+├── style.css           # CSS for styling
+├── script.js           # Core functionality
+├── pharmaLocator.html  # Pharmacy locator page
+└── assets/screenshots  # Screenshots folder
