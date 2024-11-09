@@ -49,3 +49,10 @@ A front-end hospital management system built with HTML, CSS, and JavaScript. Thi
 ├── script.js           # Core functionality
 ├── pharmaLocator.html  # Pharmacy locator page
 └── assets/screenshots  # Screenshots folder
+
+
+## Future Improvements
+
+- **Backend Integration**: Add a server-side component for user authentication and data storage.
+- **Dynamic Maps**: Expand the Pharmacy Locator to support dynamic location searches based on user input.
+- **Responsive Design**: Ensure full compatibility across mobile and tablet devices.
