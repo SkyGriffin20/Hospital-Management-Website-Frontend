@@ -253,9 +253,11 @@ h3{
     padding-left: 50px;
     padding-right: 50px;
 }
-.tab p{
+.tab{
     font-size: 17px;
+    align-self: center;
 }
+
 .table{
     align-self: center;
 }
